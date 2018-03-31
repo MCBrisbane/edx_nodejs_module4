@@ -76,7 +76,6 @@ Tests:
 
 
 // Delete
-
 # curl -X DELETE "http://localhost:3000/accounts/5abefb8dd327fc0b0ad73949"
 {"_id":"5abefb8dd327fc0b0ad73949","balance":1500,"name":"savings","__v":0}
 
