@@ -1,8 +1,6 @@
 # edx_nodejs_module4
 Module 4 Assignment
 
-Module 3 Assignment
-
 Command line example usage:
 
 `node server.js`
@@ -51,7 +49,7 @@ c# curl "http://localhost:3000/accounts" | json_pp
 // Update
 
 # curl -H "Content-Type: application/json" -X PUT -d '{"balance": "1500"}' "http://localhost:3000/accounts/5abefb8dd327fc0b0ad73949"
-{"_id":"5abefb8dd327fc0b0ad73949","balance":1500,"name":"savings","__v":0}root@GreyMan:/home/mc#
+{"_id":"5abefb8dd327fc0b0ad73949","balance":1500,"name":"savings","__v":0}
 
 # curl "http://localhost:3000/accounts" | json_pp
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
