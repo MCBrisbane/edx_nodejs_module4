@@ -13,7 +13,11 @@ Tests:
 
 ```
 // Add 2 documents, then view results:
-c# curl "http://localhost:3000/accounts" | json_pp
+#curl -H "Content-Type: application/json" -X POST -d '{"balance": "1000", "name": "savings"}' "http://localhost:3000/accounts"
+
+#curl -H "Content-Type: application/json" -X POST -d '{"balance": "1000", "name": "savings"}' "http://localhost:3000/accounts"
+
+# curl "http://localhost:3000/accounts" | json_pp
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 100   151  100   151    0     0  15100      0 --:--:-- --:--:-- --:--:-- 15100
@@ -33,21 +37,7 @@ c# curl "http://localhost:3000/accounts" | json_pp
 ]
 
 
-// Find single document
-# curl "http://localhost:3000/accounts/5abefb8dd327fc0b0ad73949" | json_pp
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100    74  100    74    0     0   2960      0 --:--:-- --:--:-- --:--:--  2960
-{
-   "_id" : "5abefb8dd327fc0b0ad73949",
-   "name" : "savings",
-   "balance" : 1500,
-   "__v" : 0
-}
-
-
 // Update
-
 # curl -H "Content-Type: application/json" -X PUT -d '{"balance": "1500"}' "http://localhost:3000/accounts/5abefb8dd327fc0b0ad73949"
 {"_id":"5abefb8dd327fc0b0ad73949","balance":1500,"name":"savings","__v":0}
 
@@ -69,6 +59,20 @@ c# curl "http://localhost:3000/accounts" | json_pp
       "__v" : 0
    }
 ]
+
+
+// Find single document
+# curl "http://localhost:3000/accounts/5abefb8dd327fc0b0ad73949" | json_pp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    74  100    74    0     0   2960      0 --:--:-- --:--:-- --:--:--  2960
+{
+   "_id" : "5abefb8dd327fc0b0ad73949",
+   "name" : "savings",
+   "balance" : 1500,
+   "__v" : 0
+}
+
 
 
 // Delete
